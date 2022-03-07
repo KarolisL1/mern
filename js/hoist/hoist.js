@@ -12,6 +12,7 @@ hello = 'world'
 
 //2
 console.log("________________________")
+
 var needle = 'haystack';
 test();
 function test(){
@@ -80,22 +81,23 @@ eat();
 //OUTPUT: chicken, half-chicken
 
 //5
-console.log("________________________")
+console.log("555555555")
 
-// mean();
-// console.log(food);
-// var mean = function() {
-//     food = "chicken";
-//     console.log(food);
-//     var food = "fish";
-//     console.log(food);
-// }
-// console.log(food);
+mean();
+console.log(food);
+var mean = function() {
+    food = "chicken";
+    console.log(food);
+    var food = "fish";
+    console.log(food);
+}
+console.log(food);
 
 /*
-mean = function(){
+var mean
+mean = function() {
     var food;
-    food = "chicken";
+    food = "chicken";
     console.log(food);
     food = "fish";
     console.log(food);
@@ -108,7 +110,7 @@ console.log(food);
 
 
 //6
-console.log("________________________")
+console.log("66666666")
 
 console.log(genre);
 var genre = "disco";
@@ -186,9 +188,19 @@ function makeDojo(name, students){
     return dojo;
 }
 
-
 /*
-
-
-
+function makeDojo(name, students){
+    const dojo = {};
+    dojo.name = name;
+    dojo.students = students;
+    if(dojo.students > 50){
+        dojo.hiring = true;
+    }
+    else if(dojo.students <= 0){
+        dojo = "closed for now";
+    }
+    return dojo;
+}
+console.log(makeDojo("Chicago", 65));
+console.log(makeDojo("Berkeley", 0));
 */
