@@ -21,5 +21,14 @@ class Effect extends Card {
         super( name, cost);
         this.text = text;
         this.target = target;
+
+        if(magnitude >0){
+            this.text = "increase... "
+        }
     }
     }
+
+let u1 = new Unit(3,);
+let u2 = new Unit();
+
+u1.attack("potato")
