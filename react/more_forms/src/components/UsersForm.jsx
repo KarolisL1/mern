@@ -10,22 +10,11 @@ const UsersForm = () => {
     })
 
     const changeHandler = (e)=>{
-        // console.log("this gives us the name of the input that is being changed-->", e.target.name)
-        
         setUsers({
             ...users,
             [e.target.name]: e.target.value
         })
     }
-    // let [Fname, setFname] = useState("");
-
-    // let [Lname, setLname] = useState("");
-
-    // let [Email, setEmail] = useState("");
-
-    // let [Password, setPassword] = useState("");
-
-    // let [Cpassword, setCpassword] = useState("");
 
     return (
         <>

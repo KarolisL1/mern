@@ -23,11 +23,7 @@ const BoxForm = () => {
         <>
         <form onSubmit={handleSubmit}>
             <label>Color: </label>
-            <input
-                type="text"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-            />
+            <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
             <input type="submit" value="Add"/>
         </form>
 
