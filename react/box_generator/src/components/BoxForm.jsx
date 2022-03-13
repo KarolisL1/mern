@@ -9,10 +9,9 @@ const BoxForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let newColorObj = { text: text }
+        let newColorObj = { text }
 
         // onSubmit(text);
-        
         //set text to empty
         setText("");
 
