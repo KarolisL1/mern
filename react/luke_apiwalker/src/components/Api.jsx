@@ -25,11 +25,30 @@ const Api = () => {
 
     return (
         <>
-            <h2>{data.name}</h2>            
+            {/* <h2>{data.name}</h2>
             <p>Height: {data.height} cm</p>
             <p>Mass: {data.mass} kg</p>
             <p>Hair Color: {data.hair_color}</p>
-            <p>Skin Color: {data.skin_color}</p> 
+            <p>Skin Color: {data.skin_color}</p> */}
+
+            {
+                (type === "people"? 
+                    <div>
+                        <h2>{data.name}</h2>
+                        <p>Height: {data.height} cm</p>
+                        <p>Mass: {data.mass} kg</p>
+                        <p>Hair Color: {data.hair_color}</p>
+                        <p>Skin Color: {data.skin_color}</p>
+                    </div>: 
+                        <div>
+                            <h2>{data.name}</h2>
+                            <p>Climate: {data.climate}</p>
+                            <p>Terrain: {data.terrain}</p>
+                            <p>Surface Water: {data.surface_water}</p>
+                            <p>Populiation: {data.population}</p>
+                        </div>
+                )
+            }
         </>
     )
 }
