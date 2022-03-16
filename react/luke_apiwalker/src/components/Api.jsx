@@ -1,6 +1,12 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import {
+    BrowserRouter,
+    Link,
+    Switch,
+    Route
+} from "react-router-dom";
 
 const Api = () => {
 
@@ -44,26 +50,9 @@ const Api = () => {
             })
     }, [type, id])
 
-    // const request = () => {
-    //         axios.get(`https://swapi.dev/api/${type}/${id}`)
-    //             .then((response) => {
-    //                 setHomeworld(response.data);
-    //                 // setKeys(Object.keys(response.data));
-    //                 console.log(response.data);
-    //                 // console.log(Object.keys(response.data));
-    //             })
-    //             .catch((err) => {
-    //                 console.log("errros in making the request", err);
-    //                 // setChecked(true);
-    //             })
 
     return (
         <>
-            {/* <h2>{data.name}</h2>
-            <p>Height: {data.height} cm</p>
-            <p>Mass: {data.mass} kg</p>
-            <p>Hair Color: {data.hair_color}</p>
-            <p>Skin Color: {data.skin_color}</p> */}
             {(checked)? <div>
                 <p>These are not the droids you're looking for</p>
                 <img src="https://api.time.com/wp-content/uploads/2015/12/star-wars-episode-iii-revenge-of-the-sith-obi-wan.jpg" width="200px" height="200px"></img>
@@ -77,7 +66,8 @@ const Api = () => {
                                     <p>Mass: {data.mass} kg</p>
                                     <p>Hair Color: {data.hair_color}</p>
                                     <p>Skin Color: {data.skin_color}</p>
-                                    <p>Homeworld: {homeworld.name}</p>
+                                    <p>Homeworld: <Link to={data.homeworld?.substring(21)}>{homeworld.name}</Link></p>
+
                                 </div>: 
                                     <div>
                                         <h2>{data.name}</h2>
@@ -95,3 +85,5 @@ const Api = () => {
 }
 
 export default Api;
+
+//have the homeworld.name be clickable and it will take you to the localhost:3000/planets/idofhomeworld
