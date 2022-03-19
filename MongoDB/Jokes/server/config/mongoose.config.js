@@ -1,7 +1,7 @@
 //connect to mongodb using mongoose 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://root:root@first.i1swc.mongodb.net/Jokes_db?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://root:<password>@first.i1swc.mongodb.net/Jokes_db?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
