@@ -7,7 +7,6 @@ module.exports.helloWord = (req, res) => {
 module.exports.findAllJokes = (req, res) => {
     JokeModel.find()
         .then(allJokes => {
-            //let a = Math.floor(Math.random() * allJokes.length)
             res.json({results: allJokes});
         })
         .catch(err => {

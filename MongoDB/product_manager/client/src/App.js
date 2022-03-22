@@ -1,9 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
 // import Main from './Main';
+import React, { useState } from 'react';
 import AllPerson from './components/AllPerson';
 import PersonForm from './components/PersonForm';
 import OnePerson from './components/OnePerson';
+import UpdatePerson from './components/UpdatePerson';
 import {
   BrowserRouter,
   Switch,
@@ -11,16 +13,22 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+  let [formSubmitted, setFormSubmitted] = useState(false);
+
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <PersonForm />
-            <AllPerson />
+            <PersonForm formSubmitted = {formSubmitted} setFormSubmitted = {setFormSubmitted}/>
+            <AllPerson formSubmitted = {formSubmitted}/>
           </Route>
           <Route exact path="/api/people/:_id">
             <OnePerson />
+          </Route>
+          <Route path="/api/people/:id/edit">
+            <UpdatePerson />
           </Route>
         </Switch>
       </div>

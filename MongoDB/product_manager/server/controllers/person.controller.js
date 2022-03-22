@@ -21,7 +21,7 @@ module.exports.createPerson = (request, response) => {
             response.json({results:person})
         })
         .catch(err => {
-            res.json({message: "Something is wrong", error: err});
+            response.json({message: "Something is wrong", error: err});
         });
 }
 
@@ -34,4 +34,21 @@ module.exports.getOnePerson = (req, response) => {
         .catch(err => {
             response.json(err);
         })
+}
+
+module.exports.updatePerson = (request, response) => {
+    const { title, price, description } = request.body;
+    Person.findByIdAndUpdate({_id: request.params.id}, request.body , {new: true})
+        .then(updatedPerson => {
+            response.json({results: updatedPerson});
+        })
+        .catch(err => {
+            response.json(err);
+        })
+}
+
+module.exports.deletePerson = (request, response) => {
+    Person.deleteOne({ _id: request.params.id })
+        .then(deleteConfirmation => response.json(deleteConfirmation))
+        .catch(err => response.json(err))
 }
