@@ -27,7 +27,7 @@ const UpdatePerson = (props) => {
             title,
             price,
             description
-        })
+        } )
             .then(res => { 
                 console.log(res)
                 history.push(`/`)

@@ -38,6 +38,8 @@ const AllPerson = (props) => {
                             <button onClick={(e)=>{deletePerson(ninjaObj._id)}}>
                                 Delete
                             </button>
+                            <br />
+                            <Link to={`/api/people/${ninjaObj._id}/edit`}>Edit</Link>
                         </div>
                     )
                 })
