@@ -10,6 +10,7 @@ const UpdatePerson = (props) => {
     const [description, setDescription] = useState('');
 
     const history = useHistory();
+    let [formErrors, setFormErrors] = useState({});
     
     useEffect(() => {
         axios.get('http://localhost:8000/api/people/' + id)
@@ -21,7 +22,7 @@ const UpdatePerson = (props) => {
             })
     }, []);
     
-    const updatePerson = e => {
+    const updatePerson = (e) => {
         e.preventDefault();
         axios.put('http://localhost:8000/api/people/' + id, {
             title,
@@ -29,8 +30,13 @@ const UpdatePerson = (props) => {
             description
         } )
             .then(res => { 
-                console.log(res)
-                history.push(`/`)
+                //console.log("bla bla", res)
+                if(res.data.error){
+                    setFormErrors(res.data.error.errors);
+                }else{
+                    console.log(res)
+                    history.push(`/`)
+                }
             })
             .catch(err => console.error(err));
     }
@@ -46,6 +52,7 @@ const UpdatePerson = (props) => {
                     value={title} 
                     onChange={(e) => { setTitle(e.target.value) }} />
                 </p>
+                <p>{formErrors.title?.message}</p>
                 <p>
                     <label>Price</label><br />
                     <input type="text" 
@@ -53,6 +60,7 @@ const UpdatePerson = (props) => {
                     value={price} 
                     onChange={(e) => { setPrice(e.target.value) }} />
                 </p>
+                <p>{formErrors.age?.message}</p>
                 <p>
                     <label>Description</label><br />
                     <input type="text" 
@@ -60,6 +68,7 @@ const UpdatePerson = (props) => {
                     value={description} 
                     onChange={(e) => { setDescription(e.target.value) }} />
                 </p>
+                <p>{formErrors.description?.message}</p>
                 <input type="submit" />
             </form>
         </div>

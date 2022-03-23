@@ -34,12 +34,13 @@ const AllPerson = (props) => {
                 personList.map((ninjaObj)=>{
                     return(
                         <div key={ninjaObj._id}>
-                            <h3><Link to={`/api/people/${ninjaObj._id}/edit`}>{ninjaObj.title}</Link></h3>
+                            <h3><Link to={`/api/people/${ninjaObj._id}`}>{ninjaObj.title}</Link></h3>
                             <button onClick={(e)=>{deletePerson(ninjaObj._id)}}>
                                 Delete
                             </button>
                             <br />
                             <Link to={`/api/people/${ninjaObj._id}/edit`}>Edit</Link>
+                            <hr />
                         </div>
                     )
                 })
