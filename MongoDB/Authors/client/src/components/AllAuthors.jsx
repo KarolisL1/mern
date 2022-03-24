@@ -13,12 +13,23 @@ const AllAuthors = (props) => {
             })
             .catch(err => console.error(err));
     }
+
+    
     
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors')
         .then(res => {
             console.log(res)
-            setAuthors(res.data.results);
+            setAuthors(res.data.results.sort((a, b) => {
+                if (a.name.toUpperCase() < b.name.toUpperCase()) {
+                    return -1;
+                }
+                if (a.name.toUpperCase() > b.name.toUpperCase()) {
+                    return 1;
+                }
+                return 0;
+            }
+            ));
         })
         .catch(err => {
             console.log(err);

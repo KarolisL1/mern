@@ -18,7 +18,7 @@ const AuthorsForm = (props) => {
                 setFormErrors(res.data.error.errors);
             }else{
                 setName("");
-                props.history.push("/");
+                history.push("/");
             }
         })
         .catch(err => {
