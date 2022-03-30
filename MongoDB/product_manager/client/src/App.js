@@ -24,10 +24,10 @@ function App() {
             <PersonForm formSubmitted = {formSubmitted} setFormSubmitted = {setFormSubmitted}/>
             <AllPerson formSubmitted = {formSubmitted}/>
           </Route>
-          <Route exact path="/api/people/:_id">
+          <Route exact path="/people/:_id">
             <OnePerson />
           </Route>
-          <Route path="/api/people/:id/edit">
+          <Route path="/people/:id/edit">
             <UpdatePerson />
           </Route>
         </Switch>

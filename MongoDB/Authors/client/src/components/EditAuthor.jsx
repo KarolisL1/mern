@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams, useHistory, Link } from "react-router-dom";
 
-const EditAuthor = (props) => {
+const EditAuthor = () => {
     const { id } = useParams();
     const [name, setName] = useState('');
 

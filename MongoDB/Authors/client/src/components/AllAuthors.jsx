@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
-const AllAuthors = (props) => {
+const AllAuthors = () => {
 
     const [authors, setAuthors] = useState([]);
 
@@ -14,8 +14,6 @@ const AllAuthors = (props) => {
             .catch(err => console.error(err));
     }
 
-    
-    
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors')
         .then(res => {

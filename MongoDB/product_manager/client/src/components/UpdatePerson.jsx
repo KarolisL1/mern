@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-    
-const UpdatePerson = (props) => {
+import { useParams, useHistory } from "react-router-dom";
+
+const UpdatePerson = () => {
     const { id } = useParams();
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState(null);
@@ -40,6 +39,16 @@ const UpdatePerson = (props) => {
             })
             .catch(err => console.error(err));
     }
+
+    const deletePerson = (personId) => {
+        axios.delete('http://localhost:8000/api/people/' + personId)
+            .then(res => {
+                console.log(res)
+                history.push(`/`)
+                // setpersonList(personList.filter(p => p._id != personId))
+            })
+            .catch(err => console.error(err));
+    }
     
     return (
         <div>
@@ -70,6 +79,7 @@ const UpdatePerson = (props) => {
                 </p>
                 <p>{formErrors.description?.message}</p>
                 <input type="submit" />
+                <button onClick={(e)=>{deletePerson(id)}}>Delete</button>
             </form>
         </div>
     )

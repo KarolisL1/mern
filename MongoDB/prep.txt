@@ -1,0 +1,50 @@
+<@&770052368145711115> To Prep for exam: ```What you will be expected to know on exam:
+1. Fully functional backend api
+    1. Get all objects
+    2. Get one object by id
+    3. Create new object
+    4. Delete object by id
+    5. Update object by id
+2. Front end
+    1. All objects display in “/“ route 
+    2. form to create new object show on “/new” route, and when you submit the form it successfully creates something new and redirects to “/“
+    3. Validations for create form
+    4. Show details about one object in another route
+    5. Delete object from the details page
+    6. Edit object-> takes you to a pre populated form
+    7. Update object -> when you submit the edit form, it successfully updates and redirects you to “/“
+
+
+
+Pre requisites to take exam:
+1. 90% core assignments completed
+2. Completed assignments must include:
+    1. Jokes API
+    2. Product Manager 1-3
+    3. Authors
+
+
+
+
+
+
+MERN setup guide 
+1. Create a folder for your project: beltreviewer 
+2. cd beltReviewer (go into the project)
+3. Initialize a javascript package for the project using: npm init -y 
+4. Install dependencies: npm install express cors mongoose 
+5. Create a server.js file in the project folder 
+6. Create a server folder in the project folder 
+7. Make 4 directories in the server folder: config, models, controllers, routes 
+8. Make a mongoose.config.js file in the config folder 
+9. Set up the config.js file as usual—>make sure you change name of db to something unique that you havent used yet 
+10. Set up server.js (remember to require the mongoose config, dont require the routes yet b/c they have not been created yet)
+11. CHECKPOINT-Test it using nodemon server.js (running the server) to make sure it says established connection with db 
+12. Create a model file in the models folder. Set up model according to wireframe and project requirements. 
+13. Create a controller file in the controllers folder, and set up the controllers to work with your models that you import 
+14. Create a routes file in the routes folder and set up routes. Make sure the methods in the controllers are referenced in the routes 
+15. In server.js, import (require) the routes and pass the app object to it (make sure this is the second to last line in server.js)
+16. CHECKPOINT- test all routes using postman before building the front end
+17. NPX create-react-app client on the project folder
+18. Cd into client and npm install axios react-router-dom@5
+```
