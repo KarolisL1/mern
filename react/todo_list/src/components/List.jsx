@@ -2,18 +2,14 @@ import React, {useState} from 'react';
 
 const List = () => {
     let [listItem, setlistItem] = useState("");
-
     let [list, setList] = useState([]);
-
     let [checked, setChecked] = useState(false);
 
     const submitHandler = (e)=>{
         e.preventDefault(); //prevents the form from reloading the whole page
         let newListObj = {listItem, checked} //create a ninja object using the info from form
 
-
-        setlistItem("")
-
+        setlistItem(""); //clear the form
         setList([...list, newListObj]) //add the new todo item to the list
     }
 
