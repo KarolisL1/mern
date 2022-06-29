@@ -29,9 +29,8 @@ const EditAuthor = () => {
         e.preventDefault();
         axios.put(`http://localhost:8000/api/authors/edit/${id}`, {
             name
-        } )
+        })
             .then(res => { 
-                //console.log("bla bla", res)
                 if(res.data.error){
                     setFormErrors(res.data.error.errors);
                 }else{
@@ -51,23 +50,19 @@ const EditAuthor = () => {
             //else starts here
             : <div>    
                 <h1>Favorite authors</h1>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/"} className="btn btn-primary btn-lg active">Home</Link>
                 <p>Edit this author:</p>
                 <div className="container">
                     <form onSubmit={updateAuthor}>
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Name</label>
                             <div className="col-sm-10">
-                            <input type="name" className="form-control" id="inputEmail3" onChange={(e) => setName(e.target.value)} value={name}/>
-                            <p>{formerrors.name?.message}</p>
+                                <input type="name" className="form-control" id="inputEmail3" onChange={(e) => setName(e.target.value)} value={name}/>
+                                <p>{formerrors.name?.message}</p>
                             </div>
                         </div>
                         <Link to={"/"} className='btn btn-secondary'>Cancel</Link>
-                        <div className="form-group">
-                            <div className="col-sm-10 offset-sm-2">
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>

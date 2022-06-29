@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from "react-router";
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 const OneAuthor = () => {
     const {id} = useParams();
@@ -19,6 +20,7 @@ const OneAuthor = () => {
 
     return (
         <div>
+            <Link to={"/"} className="btn btn-primary btn-lg active">Home</Link>
             <h1>View Page</h1>
             <p>{info.name}</p>
         </div>

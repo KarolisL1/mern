@@ -12,7 +12,4 @@ app.use(cors())
 require("./server/config/mongoose.config");
 require("./server/routes/authors.routes")(app); //routes will know about the app.
 
-
-
-
 app.listen( port, () => console.log(`Listening on port: ${port}`) );

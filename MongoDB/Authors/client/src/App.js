@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import './App.css';
 import AllAuthors from './components/AllAuthors';
 import AuthorsForm from './components/AuthorsForm';

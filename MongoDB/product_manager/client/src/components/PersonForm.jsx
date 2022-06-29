@@ -6,7 +6,6 @@ const PersonForm = (props) => {
     let [title, setTitle] = useState("");
     let [price, setPrice] = useState(undefined);
     let [description, setDescription] = useState("");
-
     let [formErrors, setFormErrors] = useState({});
 
     const createProduct = (e) => {

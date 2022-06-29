@@ -9,7 +9,7 @@ const AllAuthors = () => {
     const deleteAuthor = (personId) => {
         axios.delete('http://localhost:8000/api/authors/delete/' + personId)
             .then(res => {
-                setAuthors(authors.filter(p => p._id != personId))
+                setAuthors(authors.filter(p => p._id !== personId))
             })
             .catch(err => console.error(err));
     }
@@ -37,13 +37,14 @@ const AllAuthors = () => {
     return (
         <div className="container">
             <h1>Favorite Authors</h1>
-            <Link to={"/new"}>Add an author</Link>
+            <Link to={"/new"} className="btn btn-primary btn-md active">Add an author</Link>
+            {/* <a href="#!" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add an author</a> */}
             <p>We have quotes by:</p>
-            <table className="table">
+            <table className="table w-100">
                 <thead>
                     <tr>
-                    <th>Name</th>
-                    <th>Actions Available</th>
+                        <th>Name</th>
+                        <th>Actions Available</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,10 +54,7 @@ const AllAuthors = () => {
                             <td>
                                 <Link to={`/author/${author._id}`} className="btn btn-primary">View</Link>
                                 <Link to={`/edit/${author._id}`} className="btn btn-warning">Edit</Link>
-                                <button onClick={(e)=>{deleteAuthor(author._id)}}>
-                                Delete
-                                </button>
-                                {/* <Link to={`/authors/${author._id}/delete`} className="btn btn-danger">Delete</Link> */}
+                                <button className='btn btn-danger' onClick={(e)=>{deleteAuthor(author._id)}}>Delete</button>
                             </td>
                         </tr>
                     ))}
