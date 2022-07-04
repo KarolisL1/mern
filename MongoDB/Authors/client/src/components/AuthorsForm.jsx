@@ -29,7 +29,7 @@ const AuthorsForm = (props) => {
         <>
             <div className="container">
                 <h1>Favorite authors</h1>
-                <Link to={"/"} className="btn btn-primary btn-lg active">Home</Link>
+                <Link to={"/"} className="btn btn-primary btn-md active">Home</Link>
                 <p>Add a new author:</p>
                 <div className="container">
                     <form onSubmit={createAuthor}>
@@ -40,13 +40,12 @@ const AuthorsForm = (props) => {
                                 <p>{formerrors.name?.message}</p>
                             </div>
                         </div>
-                        <Link to={"/"} className='btn btn-secondary'>Cancel</Link>
+                        <Link to={"/"} className='btn btn-secondary m-2'>Cancel</Link>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
         </>
-
     )
 }
 

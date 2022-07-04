@@ -52,8 +52,8 @@ const AllAuthors = () => {
                         <tr key={author._id}>
                             <td>{author.name}</td>
                             <td>
-                                <Link to={`/author/${author._id}`} className="btn btn-primary">View</Link>
-                                <Link to={`/edit/${author._id}`} className="btn btn-warning">Edit</Link>
+                                <Link to={`/author/${author._id}`} className="btn btn-primary mx-auto m-2">View</Link>
+                                <Link to={`/edit/${author._id}`} className="btn btn-warning m-2">Edit</Link>
                                 <button className='btn btn-danger' onClick={(e)=>{deleteAuthor(author._id)}}>Delete</button>
                             </td>
                         </tr>

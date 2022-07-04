@@ -19,9 +19,9 @@ const OneAuthor = () => {
     }, [])
 
     return (
-        <div>
-            <Link to={"/"} className="btn btn-primary btn-lg active">Home</Link>
+        <div className="container">
             <h1>View Page</h1>
+            <Link to={"/"} className="btn btn-primary btn-md active">Home</Link>
             <p>{info.name}</p>
         </div>
     );
