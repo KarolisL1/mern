@@ -1,4 +1,7 @@
 //https://www.rapidtables.com/convert/number/binary-to-decimal.html
+
+//test
+
 function binary2decimal(str){
     // for (let i=0; i<str.length; i++){
     //     if (str[i]!=="0" && str[i]!=="1"){
