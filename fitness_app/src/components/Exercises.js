@@ -5,7 +5,7 @@ import { Box, Stack, Typography } from '@mui/material';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
 
-const Exercises = ({ exercises, setExcercises, bodyPart }) => {
+const Exercises = ({ exercises, setExercises, bodyPart }) => {
   
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 9;
@@ -19,7 +19,7 @@ const Exercises = ({ exercises, setExcercises, bodyPart }) => {
       } else {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
-      setExcercises(exercisesData);
+      setExercises(exercisesData);
     }
     fetchExercisesData();
   }, [bodyPart])
